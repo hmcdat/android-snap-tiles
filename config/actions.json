@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "actions": [
     {
       "id": "DEVELOPER_MODE",
@@ -26,7 +26,12 @@
           "settingKey": "adb_enabled",
           "onValue": "1",
           "offValue": "0",
-          "valueType": "int"
+          "valueType": "int",
+          "sideEffects": {
+            "onEnable": [
+              { "settingType": "global", "key": "adb_wifi_enabled", "value": "1", "valueType": "int" }
+            ]
+          }
         },
         {
           "id": "STAY_AWAKE",
